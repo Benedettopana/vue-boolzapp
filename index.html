@@ -58,7 +58,7 @@
             </div>
           </div>
           <!-- /Banner -->
-
+          <!-- TODO: search bar funzionante -->
           <!-- Search bar -->
           <div class="search">
             <div class="box d-flex">
@@ -72,167 +72,28 @@
 
           <!-- Contatti scroll -->
           <div class="contact">
-            <!-- primo -->
-            <div class="person d-flex padding-banner s-between">
-              <!-- img -->
-              <div class="profile d-flex margin-r">
-                <!-- img profilo -->
-                <div class="photo">
-                  <img src="./assets/img/avatar_1.jpg" alt="avatar-1">
-                </div>
-                <div class="info">
-                  <h3>Michele</h3>
-                  <span>Lorem, ipsum</span>
-                </div>
+            <!-- Creazione contatto dinamico -->
+            <div
+            class="person d-flex padding-banner s-between"
+            v-for="(person, index) in contacts"
+            @click=""
+            >
+            <!-- template contatto -->
+            <!-- img -->
+            <div class="profile d-flex margin-r">
+              <!-- img profilo -->
+              <div class="photo">
+                <img :src="person.avatar" :alt="person.name">
               </div>
-              
-              <div class="ora">
-                <span>16:15</span>
+              <div class="info">
+                <h3>{{ person.name }}</h3>
+                <span>{{ person.messages[0].message }}</span>
               </div>
-              
-            </div>
-            <!-- /primo -->
-            <!-- secondo -->
-            <div class="person d-flex padding-banner s-between">
-              <!-- img -->
-              <div class="profile d-flex margin-r">
-                <!-- img profilo -->
-                <div class="photo">
-                  <img src="./assets/img/avatar_2.jpg" alt="avatar-2">
-                </div>
-                <div class="info">
-                  <h3>Fabio</h3>
-                  <span>Lorem, ipsum</span>
-                </div>
-              </div>
-              
-              <div class="ora">
-                <span>16:01</span>
-              </div>
-              
-            </div>
-            <!-- /secondo -->
-            <!-- terzo -->
-            <div class="person d-flex padding-banner s-between">
-              <!-- img -->
-              <div class="profile d-flex margin-r">
-                <!-- img profilo -->
-                <div class="photo">
-                  <img src="./assets/img/avatar_3.jpg" alt="avatar-3">
-                </div>
-                <div class="info">
-                  <h3>Samuele</h3>
-                  <span>Lorem, ipsum</span>
-                </div>
-              </div>
-              
-              <div class="ora">
-                <span>15:56</span>
-              </div>
-              
-            </div>
-            <!-- /terzo -->
-            <!-- quarto -->
-            <div class="person d-flex padding-banner s-between">
-              <!-- img -->
-              <div class="profile d-flex margin-r">
-                <!-- img profilo -->
-                <div class="photo">
-                  <img src="./assets/img/avatar_4.jpg" alt="avatar-4">
-                </div>
-                <div class="info">
-                  <h3>Alessandro B.</h3>
-                  <span>Lorem, ipsum</span>
-                </div>
-              </div>
-              
-              <div class="ora">
-                <span>15:43</span>
-              </div>
-              
-            </div>
-            <!-- /Quarto -->
-            <!-- quinto -->
-            <div class="person d-flex padding-banner s-between">
-              <!-- img -->
-              <div class="profile d-flex margin-r">
-                <!-- img profilo -->
-                <div class="photo">
-                  <img src="./assets/img/avatar_5.jpg" alt="avatar-5">
-                </div>
-                <div class="info">
-                  <h3>Michele</h3>
-                  <span>Lorem, ipsum</span>
-                </div>
-              </div>
-              
-              <div class="ora">
-                <span>15:32</span>
-              </div>
-              
-            </div>
-            <!-- /quinto -->
-            <!-- Sesto -->
-            <div class="person d-flex padding-banner s-between">
-              <!-- img -->
-              <div class="profile d-flex margin-r">
-                <!-- img profilo -->
-                <div class="photo">
-                  <img src="./assets/img/avatar_6.jpg" alt="avatar-6">
-                </div>
-                <div class="info">
-                  <h3>Alessandro L.</h3>
-                  <span>Lorem, ipsum</span>
-                </div>
-              </div>
-              
-              <div class="ora">
-                <span>14:27</span>
-              </div>
-              
-            </div>
-            <!-- /Sesto -->
-            <!-- Settimo -->
-            <div class="person d-flex padding-banner s-between">
-              <!-- img -->
-              <div class="profile d-flex margin-r">
-                <!-- img profilo -->
-                <div class="photo">
-                  <img src="./assets/img/avatar_7.jpg" alt="avatar-7">
-                </div>
-                <div class="info">
-                  <h3>Claudia</h3>
-                  <span>Lorem, ipsum</span>
-                </div>
-              </div>
-              
-              <div class="ora">
-                <span>13:01</span>
-              </div>
-              
-            </div>
-            <!-- /Settimo -->
-            <!-- ottavo -->
-            <div class="person d-flex padding-banner s-between">
-              <!-- img -->
-              <div class="profile d-flex margin-r">
-                <!-- img profilo -->
-                <div class="photo">
-                  <img src="./assets/img/avatar_8.jpg" alt="avatar-8">
-                </div>
-                <div class="info">
-                  <h3>Federico</h3>
-                  <span>Lorem, ipsum</span>
-                </div>
-              </div>
-              
-              <div class="ora">
-                <span>11:46</span>
-              </div>
-              
-            </div>
-            <!-- /ottavo -->
-            
+            <!-- /template contatto -->
+          </div>
+          <!-- /Creazione contatto dinamico -->
+
+
 
           </div>
           <!-- /Contatti scroll -->
