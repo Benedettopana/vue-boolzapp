@@ -15,6 +15,7 @@ createApp({
         message: '',
         status: ''
       },
+      newSearch: '',
     }
   },
 
@@ -62,6 +63,18 @@ createApp({
 
   mounted(){
     this.last();
+  },
+
+  computed:{
+    // le computed sono dei metodi che DEVONO avere un return e vengono lette nell'HTML come se fossere delle variabili
+    // NON accettano parametri
+    // reagiscono al modificarsi di un dato in essa contenuto
+    contattiFiltrati(){
+      
+        // return contacts.name.filter(pizza => this.isVegan(pizza));
+
+      return contacts.filter(contact => contact.name.toLowerCase().includes(this.newSearch.toLowerCase()))
+    },
   },
 
 }).mount('#app');
