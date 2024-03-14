@@ -27,9 +27,9 @@ createApp({
     },
     
     addMsg(){
-      
+      const currentDate = new Date();
       this.newObj = {
-        date: '13/03/2024 16:09:55',
+        date:  currentDate.toLocaleString(),
         message: this.newMsg,
         status: 'sent'
       }
@@ -48,15 +48,27 @@ createApp({
 
     autoReply(){
       setTimeout(() => {
+        const currentDate = new Date();
         this.newObj = {
-          date: '10/03/2024',
+          date: currentDate.toLocaleString(),
           message: 'Ok',
           status: 'received'
         };
         this.contacts[this.activePerson].messages.push(this.newObj);
         
       }, 1000)
-    }
+    },
+
+    
+
+    // Delete Msg
+    // deleteMsg(indice){
+      
+    //   if(this.todoList[indice].done) this.todoList.splice(indice, 1);
+    //   else alert('Attenzione!! finisci prima la tua task!');
+      
+    //   console.log(this.todoList);
+    // },
 
 
   },
@@ -66,15 +78,18 @@ createApp({
   },
 
   computed:{
-    // le computed sono dei metodi che DEVONO avere un return e vengono lette nell'HTML come se fossere delle variabili
-    // NON accettano parametri
-    // reagiscono al modificarsi di un dato in essa contenuto
+    
     contattiFiltrati(){
       
-        // return contacts.name.filter(pizza => this.isVegan(pizza));
-
-      return contacts.filter(contact => contact.name.toLowerCase().includes(this.newSearch.toLowerCase()))
-    },
-  },
-
-}).mount('#app');
+      contacts.forEach(element =>{
+        if(element.name.toLowerCase().includes(this.newSearch.toLowerCase())){
+          element.visible = true;
+        }else {
+          element.visible = false;
+        }
+      })
+      return contacts;
+      // contacts.filter(contact => contact.name.toLowerCase().includes(this.newSearch.toLowerCase()));
+      }
+    }
+  }).mount('#app');

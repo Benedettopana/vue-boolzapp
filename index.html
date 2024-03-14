@@ -70,7 +70,7 @@
                   name="name"
                   placeholder="Cerca o inizia una nuova chat"
                   v-model="newSearch"
-                  @keyup.enter="contattiFiltrati()"
+                  
                   
                 />
               </div>
@@ -82,8 +82,10 @@
           <div class="contact">
             <!-- Creazione contatto dinamico -->
             <div
+
             class="person d-flex padding-banner s-between"
             v-for="(person, personId) in contattiFiltrati"
+            v-show="person.visible"
             @click="activePerson = personId, last()"
             >
             <!-- template contatto -->
