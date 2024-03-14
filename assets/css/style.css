@@ -37,6 +37,9 @@ body{
 }
 
 /* UTILITY */
+.d-none-me{
+  display: none;
+}
 .d-flex{
   display: flex;
 }
@@ -117,7 +120,7 @@ body{
   padding: 5px;
   color: white;
   background-color: var(--text-preview);
-  display: none;
+  
   border-radius: 10px;
   text-align: center;
   /* ombra box */
@@ -127,7 +130,7 @@ body{
 
 
 .chat .message .azione:hover .pop{
-  display: block;
+  /* display: block; */
 }
 
 .chat .message .azione .pop p:hover{

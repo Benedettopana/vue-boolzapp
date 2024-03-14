@@ -5,6 +5,7 @@ const { createApp } = Vue;
 createApp({
   data(){
     return{
+      // youClickMe: false,
       contacts,
       lastTime: null,
       lastMsg: null,
@@ -62,13 +63,20 @@ createApp({
     
 
     // Delete Msg
-    // deleteMsg(indice){
-      
-    //   if(this.todoList[indice].done) this.todoList.splice(indice, 1);
-    //   else alert('Attenzione!! finisci prima la tua task!');
-      
-    //   console.log(this.todoList);
-    // },
+    lastMsgDel(indice){
+      const {messages} = this.contacts[indice];
+      if(messages.length > 0){
+        return messages[messages.length-1].message;
+      }else{
+        return 'Nessun messaggio presente';
+      }
+    },
+
+    // funzione toggle hide
+    toggleMe(index){
+      const allChevron = document.querySelectorAll('.pop');
+      allChevron[index].classList.toggle('d-none-me');
+    },
 
 
   },

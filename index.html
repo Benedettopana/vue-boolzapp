@@ -21,7 +21,10 @@
 <body id="app" class="">
   <section class="webapp">
     <div class="container">
-      <div class="row d-flex  ">
+      <div
+        class="row d-flex  "
+        
+      >
         <!-- parte di sinistra con le chat -->
         <section class="history  ">
           <div class="top-screen d-flex s-between padding-header ">
@@ -97,7 +100,7 @@
               </div>
               <div class="info">
                 <h3>{{ person.name }}</h3>
-                <span>{{ person.messages[0].message }}</span>
+                <span>{{ lastMsgDel(personId) }}</span>
               </div>
             <!-- /template contatto -->
           </div>
@@ -138,7 +141,7 @@
           <div class="chat d-flex column">
             <!-- Visualizzazione dinamica dei messaggi -->
               <div 
-                v-for="msg in contacts[activePerson].messages"
+                v-for="(msg, indice) in contacts[activePerson].messages"
                 class="message d-flex s-between"
                 :class="msg.status === 'sent' ? 'send' : 'received'"
               >
@@ -150,12 +153,21 @@
                 </div>
                 <div class="chevron d-flex column s-between al-end">
                   <div class="azione">
-                    <i class="fa-solid fa-chevron-down margin-l"></i>
-                    <div class="pop">
+                    <i 
+                    @click="toggleMe(indice)"
+                      class="fa-solid fa-chevron-down margin-l "
+                    ></i>
+                    <div
+                    
+                      class="pop d-none-me "
+                    >
                       <p>Info Messaggio</p>
                       <p>Copia</p>
                       <p>Fissa</p>
-                      <p>Cancella messaggio</p>
+                      <p  
+                        @click.stop="contacts[this.activePerson].messages.splice(indice,1);
+                        toggleMe(indice)"                
+                      >Cancella messaggio</p>
                     </div>
                   </div>
                   <div class="little">{{ msg.date }}</div>
