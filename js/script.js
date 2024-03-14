@@ -1,11 +1,14 @@
-import { contacts } from "./database";
+import { contacts } from "./database.js";
 
-const {createdApp} = Vue;
+const { createApp } = Vue;
 
-createdApp({
+createApp({
   data(){
     return{
       contacts,
+
+      
     }
-  }
+  },
+
 }).mount('#app');
