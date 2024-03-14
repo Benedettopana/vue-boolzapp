@@ -7,19 +7,27 @@ createApp({
     return{
       contacts,
       last: '',
-      
+
+      // history
+      msgHistory: [],
+      // Obj msg
+      msgObj: {
+        date: '',
+        message: '',
+        status: 'sent'
+      },
+
+      activePerson: 0,
     }
   },
 
   methods:{
-    // lastmsg
-    lastMsg(){
-      // last = `${this.contacts.messages[messages.legth-1].message}`;
-    },
+
+
   },
 
   mounted(){
-    this.lastMsg();
+  
   },
 
 }).mount('#app');
