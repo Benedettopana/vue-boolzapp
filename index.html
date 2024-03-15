@@ -102,8 +102,14 @@
               </div>
               <div class="info">
                 <!-- TODO:Aggiungere ora ultimo messaggio -->
-                <h3>{{ person.name }}</h3>
+                <div class="nome-messaggio">
+                  <h3>{{ person.name }}</h3>
                 <span>{{ lastMsgDel(personId) }}</span>
+                </div>
+                
+                <div class="orario">
+                  {{contacts[activePerson].messages[contacts[activePerson].messages.length - 1 ].date}}
+                </div>
                 <!-- <span>{{}}</span> -->
               </div>
             <!-- /template contatto -->
@@ -125,7 +131,7 @@
               </div>
               <div class="contact-active margin-l  ">
                 <p>{{ contacts[activePerson].name }}</p>
-                <p>Ultimo accesso: {{ lastTime }}</p>
+                <p>Ultimo accesso: {{contacts[activePerson].messages[contacts[activePerson].messages.length - 1 ].date}} </p>
               </div>
             </div>
             <!-- /sinistra header chat-->
