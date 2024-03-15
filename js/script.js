@@ -53,7 +53,7 @@ createApp({
       randomMessage: "",
       // /Array di messaggi casuali da estrarre
       dataOra: '',
-
+      darkMode: false,
     }
   },
 
@@ -126,7 +126,15 @@ createApp({
       this.dataOra = DateTime.now().setLocale('it').toFormat('dd/MM/yyyy HH:mm:ss')
       return this.dataOra;
     },
-    
+    // DarkMode
+    toggleDarkMode() {
+      this.darkMode = !this.darkMode;
+      if (this.darkMode) {
+        document.documentElement.classList.add('night-mode');
+      } else {
+        document.documentElement.classList.remove('night-mode');
+      }
+    },
   },
 
   mounted(){
