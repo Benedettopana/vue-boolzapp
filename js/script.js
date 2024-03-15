@@ -78,7 +78,6 @@ createApp({
       allChevron[index].classList.toggle('d-none-me');
     },
 
-
   },
 
   mounted(){

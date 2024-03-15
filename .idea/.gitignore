@@ -1,0 +1,10 @@
+# Default ignored files
+/shelf/
+/workspace.xml
+/modulex.xml
+/vcs.xml
+/vue-boolzapp.iml
+/modules.xml
+
+# Editor-based HTTP Client requests
+/httpRequests/
