@@ -211,9 +211,12 @@ body{
   font-weight: bold;
   background-color: transparent;
   border: 0px solid;
-  height: 20px;
-  width: 300px;
+  height: 90%;
+  width: 100%;
   color: #CCC;
+}
+.chat-active .type .text .input{
+  height: 100%;
 }
 
 .chat-active .type .text input{
