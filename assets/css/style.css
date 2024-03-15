@@ -7,6 +7,29 @@
   --banner-color: #8EDAFC;
   --text-preview: #B6B9BB;
   --text-bar: #6B7376;
+  --text: black;
+}
+
+.night-mode {
+  /* Cambia i colori delle altre classi qui */
+  --dark-grey: #000; /* Cambia il colore di sfondo del tema scuro */
+  --send: #254B4F; /* Cambia il colore per i messaggi inviati */
+  --received: #222; /* Cambia il colore per i messaggi ricevuti */
+  --type-bar: #333; /* Cambia il colore della barra di inserimento */
+  --banner-color: #666; /* Cambia il colore del banner */
+  --text-preview: #999; /* Cambia il colore del testo di anteprima */
+  --text-bar: #ccc; /* Cambia il colore del testo nella barra di inserimento */
+  --text: white;
+  
+  .contact {
+    background-color: var(--dark-grey); /* Cambia il colore di sfondo per i contatti */
+    color: #fff; /* Cambia il colore del testo per i contatti */
+  }
+
+  /* Modifica dei colori per il testo all'interno di .contact */
+  .contact .person span {
+    color: var(--text-preview); /* Cambia il colore del testo di anteprima all'interno dei contatti */
+  }
 }
 
 /* RESET */
@@ -361,26 +384,7 @@ body{
 
 
 
-.night-mode {
-  /* Cambia i colori delle altre classi qui */
-  --dark-grey: #111; /* Cambia il colore di sfondo del tema scuro */
-  --send: #254B4F; /* Cambia il colore per i messaggi inviati */
-  --received: #222; /* Cambia il colore per i messaggi ricevuti */
-  --type-bar: #333; /* Cambia il colore della barra di inserimento */
-  --banner-color: #666; /* Cambia il colore del banner */
-  --text-preview: #999; /* Cambia il colore del testo di anteprima */
-  --text-bar: #ccc; /* Cambia il colore del testo nella barra di inserimento */
-  
-  .contact {
-    background-color: var(--dark-grey); /* Cambia il colore di sfondo per i contatti */
-    color: #fff; /* Cambia il colore del testo per i contatti */
-  }
 
-  /* Modifica dei colori per il testo all'interno di .contact */
-  .contact .person span {
-    color: var(--text-preview); /* Cambia il colore del testo di anteprima all'interno dei contatti */
-  }
-}
 
 /* ***************************************************
                     RESPONSIVE
