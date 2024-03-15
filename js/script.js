@@ -17,6 +17,41 @@ createApp({
         status: ''
       },
       newSearch: '',
+      // Array di messaggi casuali da estrarre
+      messages: [
+        "Ciao!",
+        "Come stai?",
+        "Che bel tempo oggi!",
+        "Buona giornata!",
+        "Fai attenzione!",
+        "Hai fatto un ottimo lavoro!",
+        "Divertiti!",
+        "Spero tu abbia una fantastica giornata!",
+        "Sei incredibile!",
+        "Ricordati di sorridere oggi!",
+        "Sii gentile con te stesso e con gli altri.",
+        "Non mollare mai!",
+        "Vai avanti con determinazione!",
+        "Oggi è un buon giorno per iniziare qualcosa di nuovo.",
+        "Sii la versione migliore di te stesso ogni giorno.",
+        "Tutto è possibile se ci credi.",
+        "Non guardare mai indietro, il meglio è ancora ad arrivare.",
+        "Sogna in grande!",
+        "Vivi ogni momento al massimo.",
+        "Sii grato per le piccole cose nella vita.",
+        "Non smettere mai di imparare.",
+        "Goditi il viaggio.",
+        "Sii coraggioso e intraprendente.",
+        "Lascia che la tua luce interiore risplenda.",
+        "Fatti guidare dalla tua passione.",
+        "Concentrati sul positivo.",
+        "Inizia ogni giorno con un sorriso.",
+        "La vita è piena di sorprese meravigliose.",
+        "Sii la tua migliore motivazione.",
+        "Vivi senza rimpianti."
+      ],
+      randomMessage: "",
+      // /Array di messaggi casuali da estrarre
     }
   },
 
@@ -49,18 +84,18 @@ createApp({
 
     autoReply(){
       setTimeout(() => {
+        this.getRandomMessage();
+        console.log(this.randomMessage);
         const currentDate = new Date();
         this.newObj = {
           date: currentDate.toLocaleString(),
-          message: 'Ok',
+          message: this.randomMessage,
           status: 'received'
         };
         this.contacts[this.activePerson].messages.push(this.newObj);
         
       }, 1000)
     },
-
-    
 
     // Delete Msg
     lastMsgDel(indice){
@@ -77,6 +112,11 @@ createApp({
       const allChevron = document.querySelectorAll('.pop');
       allChevron[index].classList.toggle('d-none-me');
     },
+
+    getRandomMessage() {
+      const randomIndex = Math.floor(Math.random() * this.messages.length);
+      this.randomMessage = this.messages[randomIndex];
+    }
 
   },
 
