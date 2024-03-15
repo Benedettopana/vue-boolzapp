@@ -24,6 +24,10 @@
   background-color: rgba(255, 0, 0, 0.3);
 }
 
+i{
+  cursor: pointer;
+}
+
 body{
   font-family: 'Lato', sans-serif;
 

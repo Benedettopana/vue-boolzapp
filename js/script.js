@@ -1,7 +1,7 @@
 import { contacts } from "./database.js";
 
 const { createApp } = Vue;
-
+const { DateTime } = luxon;
 createApp({
   data(){
     return{
@@ -52,6 +52,8 @@ createApp({
       ],
       randomMessage: "",
       // /Array di messaggi casuali da estrarre
+      dataOra: '',
+
     }
   },
 
@@ -63,9 +65,10 @@ createApp({
     },
     
     addMsg(){
-      const currentDate = new Date();
+      this.printData();
+      
       this.newObj = {
-        date:  currentDate.toLocaleString(),
+        date:  this.dataOra,
         message: this.newMsg,
         status: 'sent'
       }
@@ -84,11 +87,12 @@ createApp({
 
     autoReply(){
       setTimeout(() => {
+        this.printData();
         this.getRandomMessage();
         console.log(this.randomMessage);
-        const currentDate = new Date();
+        
         this.newObj = {
-          date: currentDate.toLocaleString(),
+          date: this.dataOra,
           message: this.randomMessage,
           status: 'received'
         };
@@ -116,8 +120,13 @@ createApp({
     getRandomMessage() {
       const randomIndex = Math.floor(Math.random() * this.messages.length);
       this.randomMessage = this.messages[randomIndex];
-    }
+    },
 
+    printData(){
+      this.dataOra = DateTime.now().setLocale('it').toFormat('dd/MM/yyyy HH:mm:ss')
+      return this.dataOra;
+    },
+    
   },
 
   mounted(){
